@@ -1,0 +1,13 @@
+.nav-link:hover {
+  color: black;
+}
+
+.about,
+.type,
+.copyright {
+  background-color: rgb(249, 252, 255);
+}
+
+.about p {
+  text-align: justify;
+}
