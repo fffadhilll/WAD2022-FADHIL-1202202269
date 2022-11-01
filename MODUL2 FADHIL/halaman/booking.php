@@ -12,8 +12,8 @@
 <body>
   <?php
   $imgCar = "";
-  if (isset($_GET['imgCar'])) {
-    $imgCar = $_GET['imgCar'];
+  if (isset($_POST['imgCar'])) {
+    $imgCar = $_POST['imgCar'];
   }
   ?>
   <!-- navbar -->
@@ -58,7 +58,7 @@
       </div>
 
       <div class="col-6">
-        <form method='GET' action='my_booking.php'>
+        <form method='POST' action='my_booking.php'>
           <input type="hidden" name="booking_number" value=<?= rand() ?>>
           <div class="mb-3">
             <label for="nama" class="form-label">Nama</label>

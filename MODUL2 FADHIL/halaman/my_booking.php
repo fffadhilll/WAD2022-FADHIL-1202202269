@@ -82,11 +82,11 @@ $price = 0;
               <td>
                 <?php
                 if ($car_type == "Toyota Rush") {
-                  $price -= 250000;
+                  $price += 250000;
                 } elseif ($car_type == "Toyota Ayla") {
-                  $price -= 150000;
+                  $price += 150000;
                 } elseif ($car_type == "Honda Brio") {
-                  $price -= 150000;
+                  $price += 150000;
                 }
                 echo $car_type;
                 ?>
