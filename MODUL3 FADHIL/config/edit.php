@@ -14,7 +14,7 @@ function ubah($data)
 
     $foto = upload();
 
-    $query = "SELECT wad_modul3 SET 
+    $query = "UPDATE wad_modul3 SET 
                     nama_mobil='$nama_mobil', 
                     pemilik_mobil='$nama_pemilik', 
                     merk_mobil='$merk', 

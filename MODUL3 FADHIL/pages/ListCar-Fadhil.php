@@ -1,7 +1,7 @@
 <?php
 require('../config/connector.php');
 $title = "MyCar";
-$cars = query("SELECT nama_mobil FROM wad_modul3");
+$cars = query("SELECT * FROM wad_modul3");
 ?>
 
 <!doctype html>

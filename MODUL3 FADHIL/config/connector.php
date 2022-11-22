@@ -2,7 +2,7 @@
 $server_name = "127.0.0.1:8111";
 $username = "root";
 $password = "";
-$db = "showroom_nama";
+$db = "showroom_nama_table";
 
 $conn = mysqli_connect($server_name, $username, $password, $db);
 
