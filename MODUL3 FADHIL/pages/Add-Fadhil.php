@@ -1,46 +1,48 @@
-<?php 
-    require "../config/insert.php";
+<?php
+require "../config/insert.php";
 
-    if ( isset($_POST["selesai"]) ) {
+if (isset($_POST["selesai"])) {
 
-        if ( tambah($_POST) > 0 ) {
-            echo "
+    if (tambah($_POST) > 0) {
+        echo "
                 <script>
                     alert('Data berhasil ditambahkan');
                     document.location.href = './ListCar-Fadhil.php';
                 </script>
             ";
-        } else {
-            echo "
+    } else {
+        echo "
                 <script>
                     alert('Data tidak berhasil ditambahkan');
                     document.location.href = './ListCar-Fadhil.php';
                 </script>
             ";
-        }
-    };
+    }
+};
 ?>
 
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tambah Mobil</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style/style.css">
-  </head>
-  <body>
+</head>
+
+<body>
     <!-- navbar -->
     <?php include "Navbar.php" ?>
     <!-- end of navbar -->
 
     <!-- main -->
     <main class="container mx-auto test">
-      <div class="row mt-5">
-        <h1>Tambah Mobil</h1>
-        <p>Tambah Mobil baru anda ke list show room</p>
-      </div>
+        <div class="row mt-5">
+            <h1>Tambah Mobil</h1>
+            <p>Tambah Mobil baru anda ke list show room</p>
+        </div>
 
         <form action="" method="post" enctype="multipart/form-data">
             <div class="mb-3">
@@ -89,5 +91,6 @@
     <!-- end of main -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-  </body>
+</body>
+
 </html>

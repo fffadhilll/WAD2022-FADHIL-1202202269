@@ -12,5 +12,5 @@
             </ul>
         </div>
     </div>
-    </nav>
+</nav>
 <!-- end of navbar -->
