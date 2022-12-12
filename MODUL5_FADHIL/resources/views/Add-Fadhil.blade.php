@@ -1,47 +1,4 @@
 @extends('layouts.main')
-<?php
-//     session_start();
-
-//     if ( !isset($_SESSION["login"]) ) {
-//       header("Location: ./Login.php");
-//     } 
-
-//     require "../config/insert.php";
-
-//     if (isset($_POST["selesai"])) {
-
-//         if (tambah($_POST) > 0) {
-//             echo "
-//                 <div class='toast' role='alert' aria-live='assertive' aria-atomic='true'>
-//                     <div class='toast-header'>
-//                         <strong class='me-auto'>Bootstrap</strong>
-//                         <button type='button' class='btn-close' data-bs-dismiss='toast' aria-label='Close'></button>
-//                     </div>
-//                     <div class='toast-body'>
-//                         Data berhasil ditambahkan!
-//                     </div>
-//                 </div>
-//                 ";
-//         } else {
-//             echo "
-//                     <script>
-//                         alert('Data tidak berhasil ditambahkan');
-//                         document.location.href = './ListCar-Fadhil.php';
-//                     </script>
-//                 ";
-//         }
-// };
-?>
-
-<!-- navbar -->
-<?php
-    // if ( !isset($_SESSION["login"]) ) {
-    //     include "./Navbar-noLogin.php";
-    // } else {
-    //     include "./Navbar-login.php";
-    // }
-?>
-<!-- end of navbar -->
 
 @section('container')
 <!-- main -->
@@ -50,16 +7,18 @@
         <h1>Tambah Mobil</h1>
         <p>Tambah Mobil baru anda ke list show room</p>
     </div>
-
+    
     <form action="/addCar" method="post" enctype="multipart/form-data">
     @csrf
+    
+    <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
         <div class="mb-3">
             <label for="nama_mobil" class="form-label">Nama Mobil</label>
             <input type="text" name="nama_mobil" class="form-control" id="nama_mobil">
         </div>
         <div class="mb-3">
             <label for="owner" class="form-label">Nama Pemilik</label>
-            <input type="text" name="owner" class="form-control" placeholder="Nur Muhammad Fadhilah - 1202202269" id="owner">
+            <input type="text" name="owner" class="form-control" placeholder="Nur Muhammad Fadhilah - 1202202269" id="owner" value="{{ auth()->user()->name }}">
         </div>
         <div class="mb-3">
             <label for="brand" class="form-label">Merk</label>
@@ -88,7 +47,7 @@
             </div>
 
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="status" id="belum_lunas" value="Belum Lunas">
+                <input class="form-check-input" type="radio" name="status" id="belum_lunas" value="Belum-Lunas">
                 <label class="form-check-label" for="belum_lunas">Belum Lunas</label>
             </div>
         </div>

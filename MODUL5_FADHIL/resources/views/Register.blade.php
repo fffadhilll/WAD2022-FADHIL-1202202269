@@ -1,21 +1,5 @@
 @extends('layouts.main')
 
-<?php
-    // require "../config/registrasi.php";
-
-    // if ( isset($_POST["daftar"]) ) {
-    //     if ( registrasi($_POST) > 0 ){
-    //         echo "<script>
-    //                 alert('User baru berhasil ditambahkan');
-    //               </script>";
-
-    //         header("Location: ./Login.php");
-    //     } else {
-    //         echo mysqli_error($conn);
-    //     }
-    // }
-?>
-
 @section('container')
 <!-- main -->
 <main>
@@ -52,7 +36,7 @@
                     </div>
                     <button type="submit" class="btn btn-primary" name="daftar">Daftar</button>
                 </form>
-                <p class="mt-3">Anda sudah punya akun? <a href="../pages/Login.php">Login</a></p>
+                <p class="mt-3">Anda sudah punya akun? <a href="{{ 'login' }}">Login</a></p>
             </div>
         </div>
     </div>

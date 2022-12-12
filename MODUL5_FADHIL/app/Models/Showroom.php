@@ -13,6 +13,7 @@ class Showroom extends Model
 
     protected $fillable =[
         'name',
+        'user_id',
         'owner', 
         'brand', 
         'purchase_date', 
@@ -28,6 +29,6 @@ class Showroom extends Model
     ];
     
     public function users(){
-        return $this->belongsTo('App\Models\User');
+        return $this->belongsTo(User::class, 'id_user', 'id');
     }
 }

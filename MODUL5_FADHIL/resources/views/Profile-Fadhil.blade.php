@@ -1,59 +1,5 @@
 @extends('layouts.main')
 
-<?php
-  // session_start();
-  // if ( !isset($_SESSION["login"]) ) {
-  //     header("Location: ./Login.php");
-  //     exit;
-  // }
-
-  // require('../config/edit.php');
-  // $id = $_SESSION["id"];
-  // $user = query("SELECT * FROM user_fadhil WHERE id='$id'")[0];
-
-  // if (isset($_POST["update"])) {
-  //   setcookie("primary", "", time() - 3600);
-  //   setcookie("danger", "", time() - 3600);
-  //   setcookie("success", "", time() - 3600);
-
-  //   if ($_POST["warna"] == 'Biru') {
-  //     setcookie("primary", "primary");
-  //   } elseif ($_POST["warna"] == 'Merah') {
-  //     setcookie("danger", "", time() - 3600);
-  //     setcookie("danger", "danger");
-  //   } elseif ($_POST["warna"] == 'Hijau') {
-  //     setcookie("success", "", time() - 3600);
-  //     setcookie("success", "success");
-  //   }
-
-  //     if (ubahUser($_POST) > 0) {
-  //         echo "
-  //                 <script>
-  //                     alert('Profil berhasil diubah');
-  //                     document.location.href = './Home-Fadhil.php';
-  //                 </script>
-  //             ";
-  //     } else {
-  //         echo "
-  //                 <script>
-  //                     alert('Profil tidak berhasil diubah');
-  //                     document.location.href = './Home-Fadhil.php';
-  //                 </script>
-  //             ";
-  //     }
-  //   };
-?>
-
-<!-- navbar -->
-<?php
-  // if ( !isset($_SESSION["login"]) ) {
-  //   include "./Navbar-noLogin.php";
-  // } else {
-  //   include "./Navbar-login.php";
-  // }
-?>
-<!-- end of navbar -->
-
 @section('container')
 <!-- main -->
 <main class="container mx-auto test">
@@ -62,18 +8,20 @@
   </div>
 
   <form action="" method="post">
-      <input type="hidden" name="id" value="<?= $user["id"] ?>">
+      @csrf
+      @method('PUT')
+      <input type="hidden" name="id" value="{{ $user->id }}">
       <div class="mb-3">
           <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" value="<?= $user["email"] ?>" disabled>
+          <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" value="{{ $user->email }}" disabled>
       </div>
       <div class="mb-3">
           <label for="nama" class="form-label">Nama</label>
-          <input type="text" class="form-control" id="nama" name="nama" value="<?= $user["nama"] ?>">
+          <input type="text" class="form-control" id="nama" name="nama" value="{{ $user->name }}">
       </div>
       <div class="mb-3">
           <label for="hp" class="form-label">Nomor Handphone</label>
-          <input type="text" class="form-control" id="hp" name="hp" value="<?= $user["no_hp"] ?>">
+          <input type="text" class="form-control" id="hp" name="hp" value="{{ $user->no_hp }}">
       </div>
       <hr class="">
       <div class="mb-3">
@@ -98,7 +46,7 @@
 
   <div class="row mt-5">
         <div class="col-2">
-          <img src="../assets/images/logo-ead.png" alt="" width="100" height="30">
+          <img src="/images/logo-ead.png" alt="" width="100" height="30">
         </div>
         <div class="col-10">
           <p class="">Nur Muhammad Fadhilah - 1202202269</p>

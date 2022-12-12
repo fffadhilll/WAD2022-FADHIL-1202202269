@@ -1,27 +1,5 @@
 @extends('layouts.main')
 
-<?php
-  // session_start();
-  // $title = "Home";
-  // require "../config/connector.php";
-  // if(isset($_COOKIE['id'])) {
-
-  //   $_SESSION["login"] = true;
-  //   $_SESSION["nama"] = $row["nama"];
-  //   $_SESSION["id"] = $row["id"];
-
-  // }
-?>
-<!-- navbar -->
-<?php
-  // if ( !isset($_SESSION["login"]) ) {
-  //   include "./Navbar-noLogin.php";
-  // } else {
-  //   include "./Navbar-login.php";
-  // }
-?>
-<!-- end of navbar -->
-
 @section('container')
 <!-- main -->
 <main class="container mx-auto test">
@@ -30,7 +8,7 @@
       <div class="atas">
         <h2>Selamat Datang Di Show Room Fadhil</h2>
         <p>At lacus vitae nulla sagittis scelerisque nisl. Pellentesque duis cursus vestibulum, facilisi ac, sed faucibus.</p>
-        <a class="btn btn-primary" href="/listcar">MyCar</a>
+        <a class="btn btn-primary" href="/list">MyCar</a>
       </div>
 
       <div class="row mt-5">

@@ -1,96 +1,58 @@
 @extends('layouts.main')
 
-<?php
-    // session_start();
-    // if ( !isset($_SESSION["login"]) ) {
-    //     header("Location: ./Login.php");
-    //     exit;
-    // }
-
-    // require "../config/edit.php";
-
-    // $id = $_GET["id"];
-    // $car = query("SELECT * FROM showroom_fadhil_table WHERE id_mobil=$id")[0];
-
-    // if (isset($_POST["simpan"])) {
-    //     if (ubah($_POST) > 0) {
-    //         echo "
-    //                 <script>
-    //                     alert('Data berhasil diubah');
-    //                     document.location.href = './ListCar-Fadhil.php';
-    //                 </script>
-    //             ";
-    //     } else {
-    //         echo "
-    //                 <script>
-    //                     alert('Data tidak berhasil diubah');
-    //                     document.location.href = './ListCar-Fadhil.php';
-    //                 </script>
-    //             ";
-    //     }
-    // };
-?>
-<!-- navbar -->
-<?php
-// if ( !isset($_SESSION["login"]) ) {
-//   include "./Navbar-noLogin.php";
-// } else {
-//   include "./Navbar-login.php";
-// }
-?>
-<!-- end of navbar -->
-
 @section('container')
 <!-- main -->
 <main class="container mx-auto test">
     <div class="row mt-5">
-        <h1><?= $car["nama_mobil"] ?></h1>
-        <p>Detail mobil <?= $car["nama_mobil"] ?></p>
+        <h1>{{ $showroom->name }}</h1>
+        <p>Detail mobil {{ $showroom->name }}</p>
     </div>
 
     <div class="row">
         <div class="col-6">
-            <img src="../assets/images/<?= $car["foto_mobil"] ?>" alt="">
+            <img src="{{ asset('storage/'.$showroom->image)}}" alt="">
         </div>
 
         <div class="col-6">
-            <form action="" method="post" enctype="multipart/form-data">
-                <input type="hidden" name="id_mobil" value="<?= $id ?>">
+            <form action="/update/{{ $showroom->id }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
+                <input type="hidden" name="id_mobil" value="{{ $showroom->id }}">
                 <div class="mb-3">
-                    <label for="nama_mobil" class="form-label">Nama Mobil</label>
-                    <input type="text" name="nama_mobil" class="form-control" id="nama_mobil" value="<?= $car['nama_mobil'] ?>">
+                    <label for="name" class="form-label">Nama Mobil</label>
+                    <input type="text" name="name" class="form-control" id="name" value="{{ $showroom->name }}">
                 </div>
                 <div class="mb-3">
-                    <label for="nama_pemilik" class="form-label">Nama Pemilik</label>
-                    <input type="text" name="nama_pemilik" class="form-control" value="<?= $car['pemilik_mobil'] ?>" id="nama_pemilik">
+                    <label for="owner" class="form-label">Nama Pemilik</label>
+                    <input type="text" name="owner" class="form-control" value="{{ $showroom->owner }}" id="owner">
                 </div>
                 <div class="mb-3">
-                    <label for="merk" class="form-label">Merk</label>
-                    <input type="text" name="merk" class="form-control" value="<?= $car['merk_mobil'] ?>" id="merk">
+                    <label for="brand" class="form-label">Merk</label>
+                    <input type="text" name="brand" class="form-control" value="{{ $showroom->brand }}" id="merk">
                 </div>
                 <div class="mb-3">
-                    <label for="tanggal" class="form-label">Tanggal Beli</label>
-                    <input type="date" name="tanggal" class="form-control" value="<?= $car['tanggal_beli'] ?>" id="tanggal">
+                    <label for="purchase_date" class="form-label">Tanggal Beli</label>
+                    <input type="date" name="purchase_date" class="form-control" value="{{ $showroom->purchase_date }}" id="tanggal">
                 </div>
                 <div class="mb-3">
-                    <label for="deskrpisi" class="form-label">Deskripsi</label>
-                    <textarea name="deskrpisi" class="form-control p-3" id="deskrpisi" rows="3"><?php echo htmlspecialchars($car['deskripsi']); ?></textarea>
+                    <label for="description" class="form-label">Deskripsi</label>
+                    <textarea name="description" class="form-control p-3" id="description" rows="3">{{ $showroom->description }}</textarea>
                 </div>
                 <div class="mb-3">
-                    <label for="foto" class="form-label">Foto</label>
-                    <input class="form-control" type="file" id="foto" name="foto">
+                    <label for="image" class="form-label">Foto</label>
+                    <input class="form-control" type="file" id="image" name="image">
                 </div>
 
                 <div class="mb-3">
                     <label for="status" class="form-label">Status Pembayaran</label><br>
 
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="status" id="lunas" value="Lunas" <?= $car['status_pembayaran'] == 'Lunas' ? 'checked' : ' ' ?>>
+                        <input class="form-check-input" type="radio" name="status" id="lunas" value="Lunas" {{ $showroom->status == 'Lunas' ? 'checked' : '' }}>
                         <label class="form-check-label" for="lunas">Lunas</label>
                     </div>
 
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="status" id="belum_lunas" value="Belum Lunas" <?= $car['status_pembayaran'] == 'Belum Lunas' ? 'checked' : ' ' ?>>
+                        <input class="form-check-input" type="radio" name="status" id="belum_lunas" value="Belum-Lunas" {{ $showroom->status == 'Belum-Lunas' ? 'checked' : '' }}>
                         <label class="form-check-label" for="belum_lunas">Belum Lunas</label>
                     </div>
                 </div>

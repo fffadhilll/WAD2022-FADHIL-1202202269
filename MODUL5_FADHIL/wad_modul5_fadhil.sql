@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2022 at 01:15 PM
+-- Generation Time: Dec 12, 2022 at 06:49 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -116,7 +116,9 @@ CREATE TABLE `showrooms` (
 --
 
 INSERT INTO `showrooms` (`id`, `user_id`, `name`, `owner`, `brand`, `purchase_date`, `description`, `image`, `status`, `created_at`, `updated_at`) VALUES
-(2, 1, '[value-3]', '[value-4]', '[value-5]', '0000-00-00 00:00:00', '[value-7]', '[value-8]', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(3, 2, 'asd', 'test', 'asdasd', '2022-12-12 00:00:00', 'asdads', 'img/0ckmbB8AnZANkgU9ql0arFoblBvJBbMe3jkmOmU7.png', 'Lunas', '2022-12-12 07:39:46', '2022-12-12 07:39:46'),
+(4, 2, 'sad', 'test', 'asd', '2022-12-13 00:00:00', 'asdasd', 'img/HL1ghMWi9GlwFMljbSdxCAXOA2zWtVFUcSnNXD0w.png', 'Lunas', '2022-12-12 10:08:48', '2022-12-12 10:08:48'),
+(5, 2, 'BMW 2', 'test', 'ASD', '2022-12-13 00:00:00', 'ASDASD', 'img/6FblGJuz2GqE50tXTfO6iRTH0eXJ1Iz6Z3u8S9Xa.jpg', 'Belum-Lunas', '2022-12-12 10:18:18', '2022-12-12 10:48:37');
 
 -- --------------------------------------------------------
 
@@ -139,7 +141,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `no_hp`, `email`, `password`, `created_at`, `updated_at`) VALUES
-(1, '[value-2]', '[value-3]', '[value-4]', '[value-5]', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(1, '[value-2]', '[value-3]', '[value-4]', '[value-5]', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(2, 'test', '082125949572', 'nurmuhammadfadhilah2@gmail.com', '$2y$10$6ksEj29F75L/OSwkoFKOhO0ooy/jB1OmxlLUaDTJtz6ebFaY/C.g6', '2022-12-12 06:25:06', '2022-12-12 06:25:06'),
+(3, 'fadhil', '08', 'nurmuhammadfadhilah@gmail.com', '$2y$10$.5wBDxNxHjNFmOSgqjDYP.TUT9tRg7.zT2M4EYcJTyJwY3dkxSID2', '2022-12-12 10:19:31', '2022-12-12 10:19:31');
 
 --
 -- Indexes for dumped tables
@@ -211,13 +215,13 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `showrooms`
 --
 ALTER TABLE `showrooms`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables

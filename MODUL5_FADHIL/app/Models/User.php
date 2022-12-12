@@ -12,6 +12,8 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    public $table = 'users';
+
     /* The attributes that are mass assignable.
      *
      * @var array<int, string>
@@ -20,6 +22,7 @@ class User extends Authenticatable
         'email',
         'name',
         'no_hp',
+        'email',
         'password',
     ];
 
@@ -41,7 +44,7 @@ class User extends Authenticatable
         'updated_at' => 'datetime'
     ];
 
-    public function showrooms(){
-        return $this->hasMany('App\Models\Showroom');
-    }
+    // public function showrooms(){
+    //     return $this->hasMany('App\Models\Showroom');
+    // }
 }
