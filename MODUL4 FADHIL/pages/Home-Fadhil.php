@@ -1,6 +1,6 @@
 <?php
-  session_start();
-  $title = "Home";
+session_start();
+$title = "Home";
 ?>
 
 <!doctype html>
@@ -17,11 +17,11 @@
 <body>
   <!-- navbar -->
   <?php
-    if ( !isset($_SESSION["login"]) ) {
-      include "./Navbar-noLogin.php";
-    } else {
-      include "./Navbar-login.php";
-    }
+  if (isset($_SESSION["login"])) {
+    include "./Navbar-noLogin.php";
+  } else {
+    include "./Navbar-login.php";
+  }
   ?>
   <!-- end of navbar -->
 

@@ -1,13 +1,13 @@
 <?php
-  session_start();
-  if ( !isset($_SESSION["login"]) ) {
-      header("Location: ./Login.php");
-      exit;
-  }
+session_start();
+if (!isset($_SESSION["login"])) {
+  header("Location: ./Login.php");
+  exit;
+}
 
-  require('../config/connector.php');
-  $title = "MyCar";
-  $cars = query("SELECT * FROM showroom_fadhil_table");
+require('../config/connector.php');
+$title = "MyCar";
+$cars = query("SELECT * FROM showroom_fadhil_table");
 ?>
 
 <!doctype html>
@@ -24,11 +24,11 @@
 <body>
   <!-- navbar -->
   <?php
-    if ( !isset($_SESSION["login"]) ) {
-      include "./Navbar-noLogin.php";
-    } else {
-      include "./Navbar-login.php";
-    }
+  if (!isset($_SESSION["login"])) {
+    include "./Navbar-noLogin.php";
+  } else {
+    include "./Navbar-login.php";
+  }
   ?>
   <!-- end of navbar -->
 
