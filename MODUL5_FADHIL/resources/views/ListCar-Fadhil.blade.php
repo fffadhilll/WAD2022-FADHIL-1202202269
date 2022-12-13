@@ -18,7 +18,7 @@
               <p class='card-text'>{{ $row->description }}</p>
               <span class='d-flex gap-2'>
                 <a href="{{ '/detail/'.$row->id }}" class='btn btn-success' width:140px; height: 36px;'>Detail</a>
-                <form action="{{ url('list/'.$row->id) }}" method='POST'>
+                <form action="{{ url('list/'.$row->id) }}" method='post'>
                   @csrf
                   @method('DELETE')
                   <button type='submit' class='btn btn-danger' width:140px; height: 36px;'>Delete</button>

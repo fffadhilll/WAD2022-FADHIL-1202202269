@@ -65,6 +65,7 @@ class ShowroomController extends Controller
     {
         $showroom = Showroom::find($id);
         $data = $request->all();
+        $showroom->name = $data['name'];
         $showroom->owner = $data['owner'];
         $showroom->brand = $data['brand'];
         $showroom->purchase_date = $data['purchase_date'];

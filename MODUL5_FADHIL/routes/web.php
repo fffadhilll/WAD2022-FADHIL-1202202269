@@ -32,7 +32,7 @@ Route::get('/list', [ShowroomController::class, 'showCar'])->name('showCar');
 Route::get('/detail/{id}', [ShowroomController::class, 'carDetail'])->name('carDetail');
 Route::get('/edit/{id}', [ShowroomController::class, 'carDetailEdit'])->name('carDetailEdit');
 Route::put('/update/{id}', [ShowroomController::class, 'editCar'])->name('editCar.put');
-Route::('list/{id}', [ShowroomController::class, 'deleteCar']);
+Route::delete('list/{id}', [ShowroomController::class, 'deleteCar']);
 
 Route::get('/', function () {
     return view('Home-Fadhil');
